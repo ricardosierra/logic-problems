@@ -8,19 +8,19 @@ export default class Miojo {
      * Getters e Setters
      */
     set timeToCookMiojo(timeToCookMiojo) {
-      this._timeToCookMiojo = timeToCookMiojo.charAt(0).toUpperCase() + timeToCookMiojo.slice(1);
+        this._timeToCookMiojo = parseInt(timeToCookMiojo, 10);
     }
     get timeToCookMiojo() {
       return this._timeToCookMiojo;
     }
     set timeAmpulhetaA(timeAmpulhetaA) {
-      this._timeAmpulhetaA = timeAmpulhetaA.charAt(0).toUpperCase() + timeAmpulhetaA.slice(1);
+      this._timeAmpulhetaA = parseInt(timeAmpulhetaA, 10);
     }
     get timeAmpulhetaA() {
       return this._timeAmpulhetaA;
     }
     set timeAmpulhetaB(timeAmpulhetaB) {
-      this._timeAmpulhetaB = timeAmpulhetaB.charAt(0).toUpperCase() + timeAmpulhetaB.slice(1);
+      this._timeAmpulhetaB = parseInt(timeAmpulhetaB, 10);
     }
     get timeAmpulhetaB() {
       return this._timeAmpulhetaB;
@@ -30,20 +30,18 @@ export default class Miojo {
     /**
      * Valida com as seguintes regras:
      * - As ampulatas precisam ser maiores que o tempo do miojo (ou 3 nao ficou tao claro)
-     * @param {*} timeAmpulhetaA 
-     * @param {*} timeAmpulhetaB 
-     * @param {*} miojo 
+     * @param integer timeAmpulhetaA 
+     * @param integer timeAmpulhetaB 
+     * @param integer miojo 
      */
     validate = (timeAmpulhetaA, timeAmpulhetaB, miojo) => {
         
         if (timeAmpulhetaA <= miojo || timeAmpulhetaB <= miojo) {
-            errorMsg(`Suas ampuletas acabam mais rapido que esse miojinho! :'( !`);
-            return false;
+            return errorMsg(`Suas ampuletas acabam mais rapido que esse miojinho! :'( !`);
         }
         
         if (miojo % mdc(timeAmpulhetaA, timeAmpulhetaB)) {
-            errorMsg('IMPOSSIVEL!');
-            return false;
+            return errorMsg('Não é possível cozinhar o miojo no tempo exato com as ampulhetas disponíveis!');
         }
 
         return true;
@@ -54,7 +52,7 @@ export default class Miojo {
      * @param string messenger 
      */
     msg = (messenger) => {
-        console.log(messenger);
+        process.stdout.write(messenger);
     }
 
     /**
@@ -119,7 +117,5 @@ export default class Miojo {
             calculoAmpulhetaA = resolveDiff(calculoAmpulhetaA, calculoAmpulhetaB);
             calculoAmpulhetaB = resolveDiff(calculoAmpulhetaB, calculoAmpulhetaA);
         }
-        
-        return false;
     }
   }

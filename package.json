@@ -2,7 +2,7 @@
   "name": "logic-problems",
   "version": "1.0.0",
   "description": "## Problema do Miojo",
-  "main": "Miojinho.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
