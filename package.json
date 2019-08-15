@@ -1,0 +1,23 @@
+{
+  "name": "logic-problems",
+  "version": "1.0.0",
+  "description": "## Problema do Miojo",
+  "main": "Miojinho.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardosierra/logic-problems.git"
+  },
+  "author": "Ricardo Sierra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardosierra/logic-problems/issues"
+  },
+  "homepage": "https://github.com/ricardosierra/logic-problems#readme",
+  "devDependencies": {
+    "jest-cli": "^24.8.0"
+  }
+  
+}
